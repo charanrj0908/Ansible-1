@@ -11,14 +11,15 @@
   # can also be used for pre and post tasks
            tasks:
                - name: Ansible using range and for loop
-                     debug:
-                             msg: >
-                                          --== Ansible Jinja2 for range, reversed (simulate while greater 5) ==--
-                                                       {% for entry in range(10, 0, -1) -%}
-                                                                       {% if entry == 5 -%}
-                                                                                          {% break %}
-                                                                                                          {% endif -%}
-                                                                                                                          {{ entry }}
-                                                                                                                                       {% endfor %}
-                                                                                                                                       # Three dots indicate the end of a YAML document
-                                                                                                                                       ...
+                 debug:
+                   msg: >
+                   --== Ansible Jinja2 for range, reversed (simulate while greater 5) ==--
+                          {% for entry in range(10, 0, -1) -%}
+                                  {% if entry == 5 -%}
+                                  {% break %}
+                                  {% endif -%}
+                              
+                                  {{ entry }}
+                          {% endfor %}
+  # Three dots indicate the end of a YAML document
+  ...
